@@ -1,0 +1,411 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #40c3ff;
+
+}
+
+/* body{
+  background-image: url(./image/3D\ logo.png);
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position: center;
+} */
+
+section {
+  min-height: 115vh;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10000;
+  transition: 0.6s;
+}
+header #toggle {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+header #toggle::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  width: 100%;
+  height: 2px;
+  background: black;
+}
+header #toggle::after {
+  content: "";
+  position: absolute;
+  bottom: 7px;
+  width: 100%;
+  height: 2px;
+  background: black;
+}
+header .logo {
+  position: relative;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.6s;
+}
+
+.banner.active header #toggle:before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.banner.active header #toggle:after {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  /* background: wheat; */
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+  z-index: 2;
+
+}
+.banner.active {
+  transform: translate(-400px);
+}
+
+#navigation {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100%;
+  background: brown;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  transition: 0.5s;
+}
+
+#navigation.active {
+  right: 0;
+}
+#navigation ul {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+#navigation ul li {
+  list-style: none;
+}
+#navigation ul li a {
+  color: bisque;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.content {
+  max-width: 600px;
+}
+.content h2 {
+  color: black;
+  font-size: 2em;
+}
+.content h2 span {
+  color: #40c3ff;
+  font-size: 1.2em;
+}
+.content p {
+  font-size: 1.2em;
+  color: brown;
+  font-weight: 300;
+}
+.content a {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+  background: #fff;
+  color: #000;
+  padding: 10px 30px;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.sci {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 100px;
+}
+.sci li {
+  list-style: none;
+}
+.sci li a {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+  border: 1px solid #fff;
+  margin: 10px 0 0;
+}
+.sci li a:hover {
+  background: black;
+}
+.sci li a img {
+  max-width: 20px;
+  filter: invert(1);
+}
+
+.left-services {
+  text-align: left;
+}
+
+.right-services {
+  text-align: right;
+}
+
+.services.active header #toggle:before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.services.active header #toggle:before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.services {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+
+  background-size: cover;
+  display: flex;
+
+  transition: 0.5s;
+  z-index: 2;
+}
+.services.active {
+  transform: translate(-400px);
+}
+.all-services {
+  display: flex;
+  flex-direction: column;
+}
+
+.all-blogs {
+  display: flex;
+  flex-direction: column;
+}
+.the-blogs {
+  display: flex;
+  flex-direction: row;
+}
+
+.all-abouts {
+  display: flex;
+  flex-direction: column;
+}
+
+.bg-modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0, 0.7);
+
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  width: 500px;
+  height: 300px;
+  background-color: white;
+  opacity: 1;
+  border-radius: 4px;
+}
+
+
+/* blog-area */
+
+.the-blogs button{
+  padding: 5px;
+  margin:10px;
+  cursor: pointer;
+  margin-top: 80px;
+}
+
+.all-abouts h3{
+  padding: 25px;
+  font-weight: bold;
+}
+
+/* contact-area */
+.contact{
+
+  padding: 8px;
+  margin-left: 675px;
+  cursor: pointer;
+
+}
+
+/* nav-bar */
+.navbar-collapse .navbar-nav .nav-link{
+  font-size: 20px;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-weight:500;
+  padding-left: 65px;
+}
+
+.nav-itam {
+  font-family: 'Roboto', sans-serif;
+  font-weight:900;
+  font-size: 15px;
+  color: black;
+}
+
+
+@media (max-width: 767px) {
+  header {
+    padding: 20px 50px;
+  }
+  .banner {
+    padding: 100px 50px 150px;
+  }
+  .banner h2 {
+    font-size: 1.8em;
+  }
+  .banner .content p,
+  .banner .content a {
+    font-size: 1em;
+  }
+  .banner.active {
+    transform: translateX(-250px);
+  }
+
+  #navigation {
+    width: 250px;
+  }
+  #navigation ul li a {
+    font-size: 1.5em;
+    margin: 5px 0;
+  }
+
+  .sci {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    right: 184px;
+    bottom: 80px;
+  }
+  .sci li a {
+    margin-right: 10px;
+  }
+}
+
+/* POP-UP */
+input {
+	width: 100%;
+	padding: 10px 12px;
+	font-size: 14px;
+	border: 1px solid #ccc;
+	outline: 0;
+}
+
+
+
+.bar_tool,
+.pop_up {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+}
+
+.all-abouts h3 span{
+  font-size: 20px;
+}
+
+ /* contact-area */
+
+ .row h3{
+  font-size: 36px;
+  padding: 23px 20px;
+  font-weight: bold;
+ }
+
+ .form{
+   padding: 50px;
+ }
+
+ .form input{
+   margin-bottom: 20px;
+ }
+
+.form-buttom{
+  width: 110px;
+  height: 50px;
+  background-color: blue;
+  padding: 5px;
+  color: #fff;
+  border: none;
+}
+
+.blog-area h6{
+
+  font-size: 25px;
+  color: rgb(12, 11, 11);
+  padding: 10px;
+  background-color: azure;
+
+}
+
+.blog-area p{
+  font-size: 20px;
+  background-color: azure;
+  text-align: justify;
+}
+
+.blog-area button{
+
+  width: 150px;
+  height: 50px;
+  background-color: blue;
+  padding: 5px;
+  color: #fff;
+  border: none;
+
+}
+
+.blog-area{
+  background-color: azure;
+  box-shadow: 5px 5px #888888;
+  border: 1px solid;
+  text-align: center;
+  margin-bottom: 35px;
+  padding: 15px;
+}
